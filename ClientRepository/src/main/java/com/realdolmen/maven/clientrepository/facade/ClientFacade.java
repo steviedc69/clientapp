@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.slf4j.LoggerFactory;
+
 
 
 public class ClientFacade {
@@ -24,7 +24,7 @@ public class ClientFacade {
     public ClientFacade() {
         this.postalCodeService = new PostalCodeService(new PostalCodeRepository());
         //need implementation
-        this.addressService = new AddressService();
+        this.addressService = new AddressService(new AddressRepository());
         this.personService = new PersonService(new PersonRepository());
         this.firmService = new FirmService(new FirmRepository());
     }
