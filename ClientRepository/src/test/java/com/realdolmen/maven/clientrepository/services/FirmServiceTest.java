@@ -1,34 +1,44 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.realdolmen.maven.clientrepository.services;
 
+import com.realdolmen.maven.clientrepository.repositories.FirmRepository;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.mockito.Mock;
 
-/**
- *
- * @author SDOAX36
- */
+
 public class FirmServiceTest {
     
-    public FirmServiceTest() {
+  private FirmService firmService;
+    
+    @Mock
+    private FirmRepository firmRepository;
+    
+    @Before
+    public void init(){
+        firmService = new FirmService(firmRepository);
     }
-
-    /**
-     * Test of findAll method, of class FirmService.
-     */
+    
     @Test
     public void testFindAll() throws Exception {
     }
 
-    /**
-     * Test of findById method, of class FirmService.
-     */
     @Test
     public void testFindById() throws Exception {
+    }
+    
+    @Ignore
+    @Test
+    public void insertFirmTestSuccess() throws Exception {
+       String item = "firm";
+       when(firmRepository.insertFirm()).thenReturn(item);
+       
+       String result = firmService.insertFirm();
+       
+       
+       
     }
     
 }

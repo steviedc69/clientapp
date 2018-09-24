@@ -27,4 +27,8 @@ public class PersonService {
         return personRepository.findById(id);
     }
     
+    public void insertPerson(Person person) throws NoQueryPossibleException{
+        return personRepository.insertPerson(person);
+    }
+    
 }
