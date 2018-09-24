@@ -11,21 +11,20 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
  *
  * @author SDOAX36
  */
-public class FirmRepository extends AbstractRepository<Firm, Integer>{
+public class FirmRepository extends AbstractRepository<Firm, Integer> {
 
     public static final String TABLE_NAME = "client_firm";
     public static final String KEY = "client_number";
     public static final String NAME = "name";
     public static final String TAX_ID = "tax_id";
     public static final String FIELD = "field";
-    
+
     public FirmRepository() {
-        super(TABLE_NAME,KEY);
+        super(TABLE_NAME, KEY);
     }
 
     @Override
@@ -44,5 +43,7 @@ public class FirmRepository extends AbstractRepository<Firm, Integer>{
         }
         return firm;
     }
-    
-}
+
+    public void getObjectId(Firm firm) {
+        return o.();
+    }
