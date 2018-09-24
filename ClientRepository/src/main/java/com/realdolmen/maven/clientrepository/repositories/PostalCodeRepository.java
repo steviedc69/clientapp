@@ -6,16 +6,14 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-public class PostalCodeRepository extends AbstractRepository<PostalCode, Integer>{
+public class PostalCodeRepository extends AbstractRepository<PostalCode, Integer> {
 
     public static final String TABLE_NAME = "client_person";
     public static final String KEY = "postal_code";
     public static final String CITY = "city";
-    
-    
+
     public PostalCodeRepository() {
-         super(TABLE_NAME,KEY);
+        super(TABLE_NAME, KEY);
     }
 
     @Override
@@ -31,6 +29,6 @@ public class PostalCodeRepository extends AbstractRepository<PostalCode, Integer
         return null;
     }
 
-    public void getObjectId(PostalCode postalcode){
+    public void getObjectId(PostalCode postalcode) {
         return o.();
-}
+    }

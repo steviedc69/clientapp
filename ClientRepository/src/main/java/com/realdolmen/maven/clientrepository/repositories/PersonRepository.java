@@ -17,7 +17,6 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class PersonRepository extends AbstractRepository<Person, Integer> {
 
     public static final String TABLE_NAME = "client_person";
@@ -42,7 +41,7 @@ public class PersonRepository extends AbstractRepository<Person, Integer> {
         }
         return person;
     }
-    
-    public void getObjectId(Person person){
+
+    public void getObjectId(Person person) {
         return o.();
-}
+    }
