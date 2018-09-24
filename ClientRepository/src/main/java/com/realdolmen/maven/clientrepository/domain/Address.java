@@ -1,14 +1,21 @@
-
 package com.realdolmen.maven.clientrepository.domain;
 
 public class Address {
-    
+
     private String typeAddress;
     private String street;
     private int number;
     private PostalCode postalCode;
-    
+
     public Address() {
+    }
+
+    public String getTypeAddress() {
+        return typeAddress;
+    }
+
+    public void setTypeAddress(String typeAddress) {
+        this.typeAddress = typeAddress;
     }
 
     public String getStreet() {
@@ -34,14 +41,14 @@ public class Address {
     public void setPostalCode(PostalCode postalCode) {
         this.postalCode = postalCode;
     }
-   
+
     @Override
     public String toString() {
         String card = "******************************\n"
-                + this.street +" "+this.number+"\n"
-                + this.postalCode.getNumber()+" "+this.postalCode.getCity()+
-                "*******************************\n";
+                + this.street + " " + this.number + "\n"
+                + this.postalCode.getNumber() + " " + this.postalCode.getCity()
+                + "*******************************\n";
         return card;
     }
-    
+
 }
