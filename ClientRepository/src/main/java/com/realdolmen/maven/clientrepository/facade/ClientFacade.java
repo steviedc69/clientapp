@@ -62,4 +62,48 @@ public class ClientFacade {
     }
     
     
+    public boolean addAddressforPerson(int id, Address address) throws NoPersonFoundException
+    {
+        try
+        {
+            if(personService.findById(id) == null)
+        {
+            throw new NoPersonFoundException();
+        }
+            else
+            {
+                //addressService.addAddress(id, address);
+                return true;
+            }
+        }catch(NoQueryPossibleException e)
+        {
+            throw new NoPersonFoundException();
+        }
+        
+    }
+        
+    public boolean addAddressforFirm(int id, Address address) throws NoPersonFoundException
+    {
+        try
+        {
+            if(firmService.findById(id) == null)
+        {
+            throw new NoPersonFoundException();
+        }
+            else
+            {
+                //firmService.addAddress(id, address);
+                return true;
+            }
+        }catch(NoQueryPossibleException e)
+        {
+            throw new NoPersonFoundException();
+        }
+        
+    }
+    
+    
+    
+    
+    
 }
