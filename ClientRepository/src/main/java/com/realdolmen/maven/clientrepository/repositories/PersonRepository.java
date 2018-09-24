@@ -43,6 +43,6 @@ public class PersonRepository extends AbstractRepository<Person, Integer> {
         return person;
     }
     
-  
-
+    public void getObjectId(Person person){
+        return o.();
 }

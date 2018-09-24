@@ -18,5 +18,6 @@ public class AddressRepository extends AbstractRepository<Address, Integer>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
+    public void getObjectId(Address address){
+        return o.();
 }

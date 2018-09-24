@@ -31,4 +31,6 @@ public class PostalCodeRepository extends AbstractRepository<PostalCode, Integer
         return null;
     }
 
+    public void getObjectId(PostalCode postalcode){
+        return o.();
 }

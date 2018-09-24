@@ -45,4 +45,6 @@ public class FirmRepository extends AbstractRepository<Firm, Integer>{
         return firm;
     }
     
+    public void getObjectId(Firm firm){
+        return o.();
 }
