@@ -5,56 +5,59 @@
  */
 package com.realdolmen.maven.clientrepository.services;
 
+import com.realdolmen.maven.clientrepository.domain.Person;
+import com.realdolmen.maven.clientrepository.domain.PostalCode;
+import com.realdolmen.maven.clientrepository.exceptions.NoQueryPossibleException;
+import com.realdolmen.maven.clientrepository.repositories.PostalCodeRepository;
+import java.sql.SQLException;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.when;
+import org.mockito.runners.MockitoJUnitRunner;
 
-/**
- *
- * @author SDOAX36
- */
+@RunWith(MockitoJUnitRunner.class)
 public class PostalCodeServiceTest {
     
-    public PostalCodeServiceTest() {
+    private PostalCodeService postalCodeService;
+
+    @Mock
+    private PostalCodeRepository postalCodeRepository;
+    
+    @Before
+    public void init(){
+        postalCodeService = new PostalCodeService(postalCodeRepository);
     }
 
-    /**
-     * Test of addPostalCode method, of class PostalCodeService.
-     */
     @Test
     public void testAddPostalCode() {
     }
 
-    /**
-     * Test of findAllPostalCodes method, of class PostalCodeService.
-     */
+
     @Test
     public void testFindAllPostalCodes() throws Exception {
     }
 
-    /**
-     * Test of findAllPostalCodesFromTheNine method, of class PostalCodeService.
-     */
     @Test
     public void testFindAllPostalCodesFromTheNine() throws Exception {
     }
 
-    /**
-     * Test of findById method, of class PostalCodeService.
-     */
+
     @Test
     public void testFindById() throws Exception {
     }
 
-    /**
-     * Test of removePostalCode method, of class PostalCodeService.
-     */
+
     @Test
     public void testRemovePostalCode() {
     }
 
-    /**
-     * Test of updatePostalCode method, of class PostalCodeService.
-     */
+
     @Test
     public void testUpdatePostalCode() {
     }
@@ -62,5 +65,21 @@ public class PostalCodeServiceTest {
      @Test
     public void insertPostalCodeTest() throws Exception {
         
+    }
+    
+      @Test
+    public void insertPostalCodeTestSuccess() throws Exception {
+      PostalCode postalCode = new PostalCode();
+      when(postalCodeRepository.insertItem(postalCode)).thenReturn(postalCode);
+    //injected value, with no need for testing => mock it
+    
+      PostalCode result = postalCodeService.insertPostalCode(postalCode);  
+      
+      assertEquals(result, postalCode);
+        verify(postalCodeRepository, times(1)).insertItem(postalCode);
+    }
+    
+    @Test
+    public void insertPostalCodeTestExceptionThrown() throws NoQueryPossibleException{
     }
 }
