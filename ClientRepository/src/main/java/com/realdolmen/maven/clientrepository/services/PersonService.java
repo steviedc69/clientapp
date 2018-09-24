@@ -27,4 +27,10 @@ public class PersonService {
         return personRepository.findById(id);
     }
     
+    public boolean removePerson(Person person) {
+        //not implemented
+        personRepository.deleteItem(person);
+        return false;
+    }
+    
 }

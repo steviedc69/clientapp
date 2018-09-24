@@ -23,4 +23,10 @@ public class FirmService {
         return firmRepository.findById(id);
     }
     
+    public boolean removeFirm(Firm firm) {
+        //not implemented
+        firmRepository.deleteItem(firm);
+        return false;
+    }
+    
 }
