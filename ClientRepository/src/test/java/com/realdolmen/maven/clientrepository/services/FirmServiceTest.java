@@ -1,6 +1,7 @@
 
 package com.realdolmen.maven.clientrepository.services;
 
+import com.realdolmen.maven.clientrepository.domain.Firm;
 import com.realdolmen.maven.clientrepository.repositories.FirmRepository;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -27,18 +28,9 @@ public class FirmServiceTest {
 
     @Test
     public void testFindById() throws Exception {
-    }
-    
-    @Ignore
+    }  
+      @Ignore
     @Test
     public void insertFirmTestSuccess() throws Exception {
-       String item = "firm";
-       when(firmRepository.insertFirm()).thenReturn(item);
-       
-       String result = firmService.insertFirm();
-       
-       
-       
     }
-    
 }
