@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.realdolmen.maven.clientrepository.services;
 
 import com.realdolmen.maven.clientrepository.domain.Person;
@@ -16,6 +12,7 @@ import org.mockito.Mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import org.mockito.runners.MockitoJUnitRunner;
+
 
 /**
  *
@@ -54,4 +51,8 @@ public class PersonServiceTest {
         verify(personRepository, times(1)).deleteItem(person);    
     }
     
+     @Test
+    public void insertPersonTest() throws Exception {
+        
+    }
 }

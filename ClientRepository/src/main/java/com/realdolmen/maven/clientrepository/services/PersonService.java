@@ -31,6 +31,10 @@ public class PersonService {
         //not implemented
         personRepository.deleteItem(person);
         return false;
+   }
+  
+    public Person insertPerson(Person person) throws NoQueryPossibleException{
+        return personRepository.insertItem(person);
     }
     
 }

@@ -23,10 +23,14 @@ public class FirmService {
         return firmRepository.findById(id);
     }
     
+
     public boolean removeFirm(Firm firm) {
         //not implemented
         firmRepository.deleteItem(firm);
         return false;
+}
+        public Firm insertFirm(Firm firm) throws NoQueryPossibleException{
+        return firmRepository.insertItem(firm);
     }
     
 }

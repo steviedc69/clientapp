@@ -15,7 +15,7 @@ public abstract class AbstractRepository<C,T> {
     public static final String LOGIN = "root";
     public static final String PASSWORD = "root";
     public  static String DRIVER = "com.mysql.jdbc.Driver";
-    public static String URL = "jdbc:mysql://localhost:3306/clientdb?autoReconnect=true&useSSL=false";
+    public static String URL = "jdbc:mysql://localhost:3306/clientdb?autoReconnect=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private String tableName;
     private String idName;
 

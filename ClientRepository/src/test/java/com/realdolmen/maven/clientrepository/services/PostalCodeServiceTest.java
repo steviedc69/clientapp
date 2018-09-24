@@ -81,4 +81,8 @@ public class PostalCodeServiceTest {
     public void testUpdatePostalCode() {
     }
     
+     @Test
+    public void insertPostalCodeTest() throws Exception {
+        
+    }
 }
