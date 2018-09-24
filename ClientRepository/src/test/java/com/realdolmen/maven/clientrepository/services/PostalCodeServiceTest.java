@@ -5,14 +5,35 @@
  */
 package com.realdolmen.maven.clientrepository.services;
 
+import com.realdolmen.maven.clientrepository.domain.PostalCode;
+import com.realdolmen.maven.clientrepository.exceptions.NoQueryPossibleException;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
+import com.realdolmen.maven.clientrepository.repositories.PostalCodeRepository;
+import org.junit.Before;
+import org.mockito.Mock;
+import static org.mockito.Mockito.*;
 
 /**
  *
  * @author SDOAX36
  */
+@RunWith(MockitoJUnitRunner.class)
 public class PostalCodeServiceTest {
+    
+    PostalCodeService postalCodeService;
+    
+    @Mock
+    private PostalCodeRepository postalCodeRepository;
+    
+    @Before
+     public void init(){
+      postalCodeService = new PostalCodeService(postalCodeRepository);
+     }
+    
+    
     
     public PostalCodeServiceTest() {
     }
@@ -45,11 +66,12 @@ public class PostalCodeServiceTest {
     public void testFindById() throws Exception {
     }
 
-    /**
-     * Test of removePostalCode method, of class PostalCodeService.
-     */
+    
     @Test
-    public void testRemovePostalCode() {
+    public void testRemovePostalCode() throws NoQueryPossibleException {
+        PostalCode postalCode = new PostalCode();
+        postalCodeService.removePostalCode(postalCode);
+        verify(postalCodeRepository, times(1)).deleteItem(postalCode);    
     }
 
     /**

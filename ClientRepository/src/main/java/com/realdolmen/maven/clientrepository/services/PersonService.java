@@ -27,6 +27,12 @@ public class PersonService {
         return personRepository.findById(id);
     }
     
+    public boolean removePerson(Person person) {
+        //not implemented
+        personRepository.deleteItem(person);
+        return false;
+   }
+  
     public Person insertPerson(Person person) throws NoQueryPossibleException{
         return personRepository.insertItem(person);
     }
