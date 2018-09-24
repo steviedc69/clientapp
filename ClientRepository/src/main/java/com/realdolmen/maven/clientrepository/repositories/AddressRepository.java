@@ -8,13 +8,13 @@ import java.sql.ResultSet;
 public class AddressRepository extends AbstractRepository<Address, Integer>{
 
     //private static final String TABLE;
-    public static final String ADDRESS = "Address";
-    public static final String NR = "nr";
+    public static final String TABLE = "address";
+    public static final String KEY = "id";
     public static final String TYPE ="";
     //public static final PostalCode Pcode;
     
     public AddressRepository() {
-        super(ADDRESS, NR);
+        super(TABLE, KEY);
     }
 
     @Override
@@ -32,5 +32,8 @@ public class AddressRepository extends AbstractRepository<Address, Integer>{
     
     }
     
-    
+    public List findAll(){
+        
+    }
+        
 }
