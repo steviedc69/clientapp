@@ -27,13 +27,16 @@ public class PersonService {
         return personRepository.findById(id);
     }
     
-    public boolean removePerson(Person person) {
+    public boolean removePerson(Person person) throws NoQueryPossibleException {
         //not implemented
-        personRepository.deleteItem(person);
-        return false;
+        return personRepository.deleteItem(person.getNumber());
    }
   
     public Person insertPerson(Person person) throws NoQueryPossibleException{
+        //insert also the default address
+        if(person.getAddress().isEmpty()){
+            //should not be empty
+        }
         return personRepository.insertItem(person);
     }
     

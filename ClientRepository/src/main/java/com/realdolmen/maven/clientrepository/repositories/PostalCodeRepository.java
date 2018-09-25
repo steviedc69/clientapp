@@ -9,13 +9,17 @@ import java.util.logging.Logger;
 
 public class PostalCodeRepository extends AbstractRepository<PostalCode, Integer>{
 
-    public static final String TABLE_NAME = "client_person";
+    public static final String TABLE_NAME = "postal_code";
     public static final String KEY = "postal_code";
     public static final String CITY = "city";
     
     
     public PostalCodeRepository() {
          super(TABLE_NAME,KEY);
+    }
+    
+    public PostalCodeRepository(String url){
+        super(TABLE_NAME,KEY,url);
     }
 
     @Override
@@ -29,6 +33,18 @@ public class PostalCodeRepository extends AbstractRepository<PostalCode, Integer
             Logger.getLogger(PostalCodeRepository.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+
+    //TODO implement
+    @Override
+    public String getColumnString() {
+        return "("+KEY+","+CITY+")";
+    }
+
+    //TODO implement
+    @Override
+    public String getValuesString(PostalCode postalCode) {
+        return "("+postalCode.getNumber()+",'"+postalCode.getCity()+"')";
     }
 
 }

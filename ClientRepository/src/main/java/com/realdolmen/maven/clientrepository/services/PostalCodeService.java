@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-
 public class PostalCodeService {
 
     private PostalCodeRepository postalCodeRepository;
@@ -27,12 +26,12 @@ public class PostalCodeService {
     public List<PostalCode> findAllPostalCodes() throws NoQueryPossibleException {
         return postalCodeRepository.findAll();
     }
-    
-    public List<PostalCode> findAllPostalCodesFromTheNine() throws NoQueryPossibleException{
+
+    public List<PostalCode> findAllPostalCodesFromTheNine() throws NoQueryPossibleException {
         List<PostalCode> postalCodes = postalCodeRepository.findAll();
         List<PostalCode> tempList = new ArrayList<>();
-        for(PostalCode p : postalCodes){
-            if(p.getNumber()>8999 && p.getNumber()< 10000){
+        for (PostalCode p : postalCodes) {
+            if (p.getNumber() > 8999 && p.getNumber() < 10000) {
                 tempList.add(p);
             }
         }
@@ -43,19 +42,16 @@ public class PostalCodeService {
         return postalCodeRepository.findById(id);
     }
 
-    public boolean removePostalCode(PostalCode postalCode) {
-        //not implemented
-        postalCodeRepository.deleteItem(postalCode);
-        return false;
+    public boolean removePostalCode(PostalCode postalCode) throws NoQueryPossibleException {
+        return postalCodeRepository.deleteItem(postalCode.getNumber());
     }
 
     public boolean updatePostalCode(PostalCode postalCode) {
-        //not implemented
         postalCodeRepository.updateItem(postalCode);
         return false;
     }
-    
-        public PostalCode insertPostalCode(PostalCode postalCode) throws NoQueryPossibleException{
+
+    public PostalCode insertPostalCode(PostalCode postalCode) throws NoQueryPossibleException {
         return postalCodeRepository.insertItem(postalCode);
     }
 }

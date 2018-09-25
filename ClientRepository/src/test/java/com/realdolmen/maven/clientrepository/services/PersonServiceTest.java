@@ -1,4 +1,3 @@
-
 package com.realdolmen.maven.clientrepository.services;
 
 import com.realdolmen.maven.clientrepository.domain.Person;
@@ -13,23 +12,23 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import org.mockito.runners.MockitoJUnitRunner;
 
-
 /**
  *
  * @author SDOAX36
  */
 @RunWith(MockitoJUnitRunner.class)
 public class PersonServiceTest {
-    
+
     PersonService personService;
-    
+
     @Mock
     private PersonRepository personRepository;
-    
+
     @Before
-     public void init(){
-      personService = new PersonService(personRepository);
-     }
+    public void init() {
+        personService = new PersonService(personRepository);
+    }
+
     /**
      * Test of findAll method, of class PersonService.
      */
@@ -43,16 +42,17 @@ public class PersonServiceTest {
     @Test
     public void testFindById() throws Exception {
     }
-    
+
     @Test
     public void testRemovePerson() throws NoQueryPossibleException {
         Person person = new Person();
+        person.setNumber(1);
         personService.removePerson(person);
-        verify(personRepository, times(1)).deleteItem(person);    
+        verify(personRepository, times(1)).deleteItem(person.getNumber());
     }
-    
-     @Test
+
+    @Test
     public void insertPersonTest() throws Exception {
-        
+
     }
 }

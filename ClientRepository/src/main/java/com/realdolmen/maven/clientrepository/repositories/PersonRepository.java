@@ -28,6 +28,11 @@ public class PersonRepository extends AbstractRepository<Person, Integer> {
     public PersonRepository() {
         super(TABLE_NAME, KEY);
     }
+    
+    //use this to test the db
+    protected PersonRepository(String url){
+        super(TABLE_NAME,KEY,url);
+    }
 
     @Override
     public Person createObject(ResultSet resultSet) {
@@ -42,7 +47,16 @@ public class PersonRepository extends AbstractRepository<Person, Integer> {
         }
         return person;
     }
-    
-  
 
+    //TODO implement
+    @Override
+    public String getColumnString() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    //TODO implement
+    @Override
+    public String getValuesString(Person c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

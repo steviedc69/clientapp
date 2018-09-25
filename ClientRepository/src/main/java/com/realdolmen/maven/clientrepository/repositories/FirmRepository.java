@@ -27,6 +27,11 @@ public class FirmRepository extends AbstractRepository<Firm, Integer>{
     public FirmRepository() {
         super(TABLE_NAME,KEY);
     }
+    
+    //This method is used for testing the db using the testdb url
+    protected FirmRepository(String url){
+        super(TABLE_NAME,KEY,url);
+    }
 
     @Override
     public Firm createObject(ResultSet resultSet) {
@@ -44,5 +49,17 @@ public class FirmRepository extends AbstractRepository<Firm, Integer>{
         }
         return firm;
     }
+
+    @Override
+    public String getColumnString() {
+        return "("+TAX_ID+","+NAME+")";
+    }
+
+    //TODO implement
+    @Override
+    public String getValuesString(Firm c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

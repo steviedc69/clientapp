@@ -29,11 +29,9 @@ public class PostalCodeServiceTest {
     private PostalCodeRepository postalCodeRepository;
     
     @Before
-     public void init(){
-      postalCodeService = new PostalCodeService(postalCodeRepository);
-     }
-    
-    
+    public void init() {
+        postalCodeService = new PostalCodeService(postalCodeRepository);
+    }
     
     public PostalCodeServiceTest() {
     }
@@ -65,13 +63,13 @@ public class PostalCodeServiceTest {
     @Test
     public void testFindById() throws Exception {
     }
-
     
     @Test
     public void testRemovePostalCode() throws NoQueryPossibleException {
         PostalCode postalCode = new PostalCode();
+        postalCode.setNumber(1000);
         postalCodeService.removePostalCode(postalCode);
-        verify(postalCodeRepository, times(1)).deleteItem(postalCode);    
+        verify(postalCodeRepository, times(1)).deleteItem(postalCode.getNumber());        
     }
 
     /**
@@ -81,7 +79,7 @@ public class PostalCodeServiceTest {
     public void testUpdatePostalCode() {
     }
     
-     @Test
+    @Test
     public void insertPostalCodeTest() throws Exception {
         
     }
